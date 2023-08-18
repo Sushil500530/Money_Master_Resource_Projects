@@ -1,6 +1,4 @@
-// function clickBtnCalculate(){
 
-// }
  document.getElementById('btn-calculate').addEventListener('click', function(){
     const incomeMoney= document.getElementById('income').value ;
     const income = parseFloat(incomeMoney)
@@ -21,41 +19,28 @@
     }
     const totalCalculate = food + rent + clothes ; 
     // console.log(totalCalculate)
-    
-    
-    
     // total expenses 
     const totalExpanses = document.getElementById('total-expenses')
     totalExpanses.innerText = `${totalCalculate}tk`
     
     // balance 
     const totalBalance = income - totalCalculate ;
-    console.log(totalBalance)
+    // console.log(totalBalance)
     // get value balance
     const balance = document.getElementById('balance')
     balance.innerText = `${totalBalance}tk`;
-   
     document.getElementById('btn-save').addEventListener('click',function(){
     const savePercent = document.getElementById('input-save').value ;
     const saveAverage = parseFloat(savePercent) / 100 * income ;
-    const saveMoney = totalBalance -saveAverage ;
-    const romaining = saveMoney - totalBalance
+    // const saveMoney = income -saveAverage ;
+    const immediatlySave = totalBalance - saveAverage
     const addSave = document.getElementById('saving-amount') 
+    addSave.innerText = saveAverage 
+    // console.log(addSave)
     const romainingBalance = document.getElementById("remaining-balance") 
-    addSave.innerText = saveMoney 
-    romaining.innerText = romainingBalance
+    romainingBalance.innerText = immediatlySave ;
+    
     })
  })
 
 
-// function saveMoney(){
-//     const savePercent = document.getElementById('input-save').value ;
-//     const saveAverage = parseFloat(savePercent) / 100 * income ;
-//     const saveMoney = totalBalance -saveAverage ;
-//     const romaining = saveMoney - totalBalance
-//     const addSave = document.getElementById('saving-amount') 
-//     const romainingBalance = document.getElementById("remaining-balance") 
-//     addSave.innerText = saveMoney 
-//     romaining.innerText = romainingBalance
-// }
-// saveMoney()
